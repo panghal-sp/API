@@ -212,27 +212,6 @@ public class Services {
 		return content + "";
 	}
 
-	public static String getToken() {
-		String query = "SELECT TOKEN FROM NG_EOBC_SMS_TOKEN_TABLE";
-
-		xmlLog.info(" DB QUERY :: " + query);
-		XMLParser parser = General.executeQuery(query);
-		xmlLog.info("Output For DB QUERY :: " + parser);
-		if (parser.getValueOf("MainCode").equals("0")) {
-			xmlLog.info("##### query successfully executed  :: " + query + " ,ThreadName : "
-					+ Thread.currentThread().getName());
-
-			XMLParser sbParser = new XMLParser();
-			// sbParser.setInputXML(query);
-
-			// sbParser.setInputXML(parser.getValueOf("Record"));
-
-			// for (int i = 0; i < parser.getNoOfFields("Record"); i++) {
-			sbParser.setInputXML(parser.getValueOf("Record"));
-			String token = sbParser.getValueOf("TOKEN");
-			return token;
-		}
-		return null;
-	}
+	
 
 }
