@@ -1,5 +1,3 @@
-package com.newgen.ao.utility;
-
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStreamReader;
@@ -27,7 +25,6 @@ import org.apache.log4j.Logger;
 public class Services {
 
 	static Logger xmlLog = Logger.getLogger("xmllog");
-	NGCBSUploadConfig config = NGCBSUploadConfig.getInstance();
 
 
 	public static class DummyTrustManager implements X509TrustManager {
